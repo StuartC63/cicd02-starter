@@ -5,6 +5,10 @@ terraform {
       version = "7.7.0"
     }
   }
+  backend "gcs" {
+    bucket = "{{ bucket }}"
+    prefix = "terraform/state"
+  }
 }
 
 variable "gcp_project" {}
